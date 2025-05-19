@@ -1,16 +1,19 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 import { ModeToggle } from './ModeToggle';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 
 const Navbar = () => {
+
+    
     const pathname = usePathname();
-   /* const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen)
-    } */
+    } 
 
     const menuItems = [
         {href: "/", label: "Home"},
@@ -42,8 +45,35 @@ const Navbar = () => {
             </div> 
 
           {/* mobile */}
+          <button onClick={toggleMobileMenu} className='md:hidden p-2 rounded-lg hover:bg-muted transition-colors cursor-pointer'>
+            {isMobileMenuOpen ? (
+                <XMarkIcon className='w-6 h-6'/>
+            ) : (
+                <Bars3Icon className='w-6 h-6'/>
+            )}
+          </button>
        </div>
     
+    {/* mobile menu */}
+    {
+        isMobileMenuOpen && (
+            <div className='md:hidden '>
+                <div className='py-4 space-y-4 p-4'>
+                    {
+                    menuItems.map((item, index) => (
+                            <div key={index}>
+                                 <Link key={item.href} href={item.href} className="block py-2 hover:text-primary transition-colors"> {item.label} </Link>
+                            </div>
+                        )
+                    )
+                }
+                </div>
+                <div className='p-4'>
+                 <ModeToggle/>
+                 </div>
+            </div>
+        )
+    }
     </nav>
   )
 }
