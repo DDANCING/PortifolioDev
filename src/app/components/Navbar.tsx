@@ -23,7 +23,7 @@ const Navbar = () => {
         {href: "/contact", label: "Contact"},
     ]
   return (
-    <nav className='fixed w-full bg-muted backdrop-blur-sm z-50'>
+    <nav className='fixed w-full bg-muted/80 backdrop-blur-sm z-50'>
        <div className='container max-w-7xl mx-auto px-4'>
           {/* desktop */}
           <div className='flex items-center justify-between h-16'>

@@ -83,7 +83,7 @@ const Hero = () => {
           </div>
           <div>
             <Link href="/projects">
-              <Button className='text-foreground font-bold text-lg p-6 m-2'>
+              <Button className='text-muted font-bold text-lg p-6 m-2'>
                 Projects
               </Button>
             </Link>
