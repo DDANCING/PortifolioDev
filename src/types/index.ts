@@ -7,10 +7,14 @@ export interface Project {
   image: string;
 }
 
-export interface Blog {
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  slug: string;
+export interface Certification {
+  title: string;             
+  institution: string;       
+  instructor?: string;      
+  duration: string;          
+  completionDate: string;   
+  certificateLink: string;  
+  description?: string;     
+  topics: string[];         
+  technologies: string[];   
 }

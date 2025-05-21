@@ -1,10 +1,14 @@
-import { Button } from "@/components/ui/button";
+import Certifications from "./components/Certifications";
+import Hero from "./components/hero";
+import Projects from "./components/Projects";
 
 
 export default function Home() {
   return (
-    <div>
-        <Button>Click me</Button>
-    </div>
+   <>
+   <Hero/>
+   <Projects/>
+   <Certifications/>
+   </>
   );
 }
