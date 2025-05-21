@@ -83,12 +83,12 @@ const Hero = () => {
           </div>
           <div>
             <Link href="/projects">
-              <Button className='text-muted font-bold text-lg p-6 m-2'>
+              <Button className='text-muted font-bold text-lg p-6 m-2 shadow-md'>
                 Projects
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant={'secondary'} className='text-foreground font-bold text-lg p-6 m-2'>
+              <Button variant={'secondary'} className='text-foreground font-bold text-lg p-6 m-2 shadow-md'>
                 Contact
               </Button>
             </Link>

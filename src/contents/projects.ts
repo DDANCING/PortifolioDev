@@ -11,8 +11,8 @@ export const projects: Project[] = [
         image: '/projects/projecta.png',
       },
        {
-        title: 'Toctoc',
-        description: 'Toctoc is an innovative platform inspired by the TikTok format, but focused on the real estate market.',
+        title: 'Toctok',
+        description: 'Toctok is an innovative platform inspired by the TikTok format, but focused on the real estate market.',
         technologies: ['Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Prisma', 'Shadcn/ui', 'Auth.js v5'], 
         githubLink: 'https://github.com/DDANCING/toctok',
         demoLink: 'https://toctok.vercel.app/',
