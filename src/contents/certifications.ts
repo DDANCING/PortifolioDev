@@ -37,6 +37,80 @@ export const certifications: Certification[] = [
     ]
   },
   {
+  title: "Duolingo Clone",
+  institution: "Code With Antonio",
+  instructor: "Antonio",
+  duration: "11 hours",
+  completionDate: "2024-11",
+  certificateLink: "https://www.codewithantonio.com/projects/duolingo-clone",
+  description: "Build a full-featured language learning SaaS inspired by Duolingo. Includes course selection, guided lessons with characters, audio/visual effects, and modern UI.",
+  topics: [
+    "Language learning app development",
+    "Course selection and guided lessons",
+    "Audio and visual effects integration",
+    "SaaS platform fundamentals",
+    "Payment integration with Stripe"
+  ],
+  technologies: [
+    "Next.js 14",
+    "Drizzle ORM",
+    "PostgreSQL",
+    "React.js",
+    "Server Actions",
+    "Tailwind CSS",
+    "ShadcnUI",
+    "Stripe"
+  ]
+},
+{
+  title: "Build an LMS Platform",
+  institution: "Code With Antonio",
+  instructor: "Antonio",
+  duration: "10 hours",
+  completionDate: "2024-09",
+  certificateLink: "https://www.codewithantonio.com/projects/lms-platform",
+  description: "Learn how to create a complete Learning Management System (LMS) platform using modern technologies, including payment integration, course structure, and user progress tracking.",
+  topics: [
+    "LMS (Learning Management System) architecture",
+    "App Router in Next.js 13",
+    "User authentication and course enrollment",
+    "Payment system with Stripe",
+    "Database modeling and progress tracking"
+  ],
+  technologies: [
+    "Next.js 13 (App Router)",
+    "Prisma ORM",
+    "React.js",
+    "Tailwind CSS",
+    "Stripe",
+    "MySQL"
+  ]
+},
+  {
+  title: "Next Auth v5 - Advanced Guide",
+  institution: "Code With Antonio",
+  instructor: "Antonio",
+  duration: "8 hours",
+  completionDate: "2024-07",
+  certificateLink: "https://www.codewithantonio.com/projects/auth-masterclass",
+  description: "Comprehensive guide to building a custom authentication system using Next Auth v5, including 2FA, password recovery, email verification, credentials and OAuth login.",
+  topics: [
+    "Two Factor Authentication (2FA)",
+    "Forgot Password",
+    "Email Verification",
+    "Credential Login",
+    "OAuth with Google & GitHub"
+  ],
+  technologies: [
+    "Next.js",
+    "Next Auth (Auth.js)",
+    "React.js",
+    "Tailwind CSS",
+    "PostgreSQL"
+  ]
+},
+
+  {
     title: "NLW Journey - DevOps",
     institution: "Rocketseat",
     instructor: "Rocketseat Team",

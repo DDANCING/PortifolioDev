@@ -25,23 +25,25 @@ const Hero = () => {
             What’s up? I’m <span className='text-primary'>Marcelo Mazzonetto</span>
           </h1>
           <div className='text-xl md:text-2xl text-muted-foreground h-10'>
-            <Typewriter
-              options={{
-                strings: [
-                  'Software Engineer',
-                  'Full Stack Developer',
-                  'Next',
-                  'React',
-                  'React Native',
-                  'Node.js',
-                  'DevOps',
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 50,
-                deleteSpeed: 30,
-              }}
-            />
+            <div className="notranslate" translate="no">
+  <Typewriter
+    options={{
+      strings: [
+        'Software Engineer',
+        'Full Stack Developer',
+        'Next',
+        'React',
+        'React Native',
+        'Node.js',
+        'DevOps',
+      ],
+      autoStart: true,
+      loop: true,
+      delay: 50,
+      deleteSpeed: 30,
+    }}
+  />
+</div>
           </div>
           <div className='flex justify-center space-x-4 mb-8'>
               <a
