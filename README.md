@@ -56,7 +56,7 @@ Acesse o aplicativo em: [http://localhost:3000](http://localhost:3000)
 
 # 📄 Licença
 
-Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE]((https://github.com/DDANCING/PortifolioDev/blob/master/LICENCE)) para mais detalhes.
 
 ## 📫 Contato
 
