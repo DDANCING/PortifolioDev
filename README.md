@@ -59,4 +59,4 @@ Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) par
 
 ## 📫 Contato
 
-Para mais informações, entre em contato com [Marcelo Mazzonetto](https://github.com/DDANCING)
+Para mais informações, entre em contato com [Marcelo Mazzonetto](https://portifolio-dev-three.vercel.app/contact)
