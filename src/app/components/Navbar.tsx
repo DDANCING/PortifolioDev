@@ -4,6 +4,7 @@ import { ModeToggle } from './ModeToggle';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
+import Image from 'next/image';
 
 const Navbar = () => {
 
@@ -28,7 +29,12 @@ const Navbar = () => {
           {/* desktop */}
           <div className='flex items-center justify-between h-16'>
             <Link href="/" className='text-primary font-bold text-xl'>
-            Portfolio
+            <Image
+            src={"/Logo.png"}
+            alt='logo'
+            width={50}
+            height={50}
+            />
             </Link>
             {/* desktop menus */}
             <div className='hidden md:flex items-center space-x-8'>

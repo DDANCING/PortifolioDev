@@ -86,14 +86,14 @@ const AboutPage = () => {
                             JucouraJeans, Cascavel-PR — Sales and Website Manager
                         </h3>
                         <p className="text-primary/80 mb-2">
-                            JucouraJeans, Cascavel-PR   2021 - 2023 
+                            JucouraJeans, Cascavel-PR · 2021 - 2023 
                         </p>
                         <ul className="text-muted-foreground text-sm">
                             <li>
-                              ●  Developed and managed the company’s official website.
+                              ·  Developed and managed the company’s official website.
                             </li>
                             <li>
-                              ●  Responsible for customer service and commercial support.
+                              ·  Responsible for customer service and commercial support.
                             </li>
                         </ul>
                     </div>
