@@ -6,7 +6,9 @@ PortifolioDev é um portfólio digital moderno e responsivo, desenvolvido com Ne
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [PostCSS](https://postcss.org/)
+- [Tailwindcss](http://tailwindcss.com/)
+- [Shadcn/ui](https://ui.shadcn.com/)
+- [framer motion](https://motion.dev/)
 - [ESLint](https://eslint.org/)
 - [Vercel](https://vercel.com/) (deploy)
 
@@ -51,7 +53,7 @@ Acesse o aplicativo em: [http://localhost:3000](http://localhost:3000)
 ✅ Otimização de fontes com `next/font`  
 ✅ Deploy contínuo via Vercel
 
-## 📄 Licença
+# 📄 Licença
 
 Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
