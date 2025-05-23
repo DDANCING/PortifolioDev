@@ -46,6 +46,7 @@ yarn dev
 
 Acesse o aplicativo em: [http://localhost:3000](http://localhost:3000)
 
+```
 ## 📌 Funcionalidades
 
 ✅ Design responsivo e moderno  
