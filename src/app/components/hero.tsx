@@ -1,6 +1,8 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { fadeInUp, scaleIn } from '@/utils/animations'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,8 +12,8 @@ import Typewriter from 'typewriter-effect'
 const Hero = () => {
   return (
     <section className='py-28 container max-w-7xl mx-auto flex'>
-      <div className='max-w-3xl mx-auto text-center flex flex-col items-center mb-4'>
-        <div>
+      <motion.div className='max-w-3xl mx-auto text-center flex flex-col items-center mb-4'>
+        <motion.div {...scaleIn} transition={{delay: 0.2}}>
           <Image
             src="/profile.jpg"
             alt='profile image'
@@ -19,11 +21,11 @@ const Hero = () => {
             height={100}
             className='rounded-full mb-4 w-32 h-32 object-cover ring-2 ring-primary'
           />
-        </div>
+        </motion.div>
         <div>
-          <h1 className='text-2xl md:text-4xl font-bold mb-6'>
-            What’s up? I’m <span className='text-primary'>Marcelo Mazzonetto</span>
-          </h1>
+          <motion.h1 {...fadeInUp} transition={{delay: 0.3}} className='text-2xl md:text-4xl font-bold mb-6'>
+            What’s up? I’m <motion.span {...fadeInUp} transition={{delay: 0.5}} className='text-primary'>Marcelo Mazzonetto</motion.span>
+          </motion.h1>
           <div className='text-xl md:text-2xl text-muted-foreground h-10'>
             <div className="notranslate" translate="no">
   <Typewriter
@@ -45,7 +47,7 @@ const Hero = () => {
   />
 </div>
           </div>
-          <div className='flex justify-center space-x-4 mb-8'>
+          <motion.div {...fadeInUp} transition={{delay: 0.7}}  className='flex justify-center space-x-4 mb-8'>
               <a
                 href="https://github.com/DDANCING"
                 target="_blank"
@@ -82,21 +84,31 @@ const Hero = () => {
              >
                <FaWhatsapp />
              </a>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div className='flex justify-center' {...fadeInUp} transition={{delay: 0.9}}>
+             <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
             <Link href="/projects">
               <Button className='text-muted font-bold text-lg p-6 m-2 shadow-md'>
                 Projects
               </Button>
             </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
             <Link href="/contact">
               <Button variant={'secondary'} className='text-foreground font-bold text-lg p-6 m-2 shadow-md'>
                 Contact
               </Button>
             </Link>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
