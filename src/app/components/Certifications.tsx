@@ -55,7 +55,7 @@ const Certifications = () => {
 
             <div className='flex flex-col gap-2 w-full'>
               {/* Tópicos */}
-              <div className='flex flex-wrap gap-2 mb-2 hidden md:flex'>
+              <div className='flex flex-wrap gap-2 mb-2 md:flex'>
                 {certification.topics.map((topic, index) => (
                   <span
                     key={index}
@@ -77,7 +77,7 @@ const Certifications = () => {
               </div>
 
               {/* Tecnologias */}
-              <div className='flex flex-wrap gap-2 mb-2 hidden md:flex'>
+              <div className='flex flex-wrap gap-2 mb-2 md:flex'>
                 {certification.technologies.map((tech, index) => (
                   <span
                     key={index}
