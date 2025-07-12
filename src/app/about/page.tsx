@@ -130,6 +130,30 @@ const AboutPage = () => {
               <li>· Responsible for customer service and commercial support.</li>
             </ul>
           </motion.div>
+          <motion.div
+  className="bg-muted p-6 rounded-lg shadow-md"
+  variants={fadeInUp}
+  {...cardHoverSmall}
+>
+  <h3 className="text-xl font-semibold mb-2">
+    M/M, Cascavel-PR — Development Ecommerce and admin panel
+  </h3>
+  <p className="text-primary/80 mb-2">
+    M/M, Cascavel-PR · 2025 - Present
+  </p>
+  <ul className="text-muted-foreground text-sm space-y-1">
+    <li>· Developed complete e-commerce platform and admin dashboard</li>
+    <li>· Maintained and updated features regularly based on client needs</li>
+  </ul>
+  <a
+    href="https://crismazzonetto.com.br"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block mt-4 px-4 py-2 bg-primary text-white text-sm font-medium rounded-md hover:bg-primary/90 transition"
+  >
+    Visit crismazzonetto.com.br
+  </a>
+</motion.div>
         </motion.div>
       </motion.section>
     </div>

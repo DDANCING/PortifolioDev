@@ -18,5 +18,13 @@ export const projects: Project[] = [
         demoLink: 'https://toctok.vercel.app/',
         image: '/projects/toctok.png',
       },
+      {
+        title: 'E-commerce',
+        description: 'E-commerce is a platform that allows users to buy and sell products online, providing a seamless shopping experience.',
+        technologies: ['Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Prisma', 'Shadcn/ui', 'Auth.js v5', 'Stripe', 'React Hook Form', 'Zod', 'Axios', 'PWA'], 
+        githubLink: 'https://github.com/DDANCING/ecommerce',
+        demoLink: 'https://ecommerce-git-dev-marcelo-mazzonettos-projects.vercel.app/',
+        image: '/projects/Ecommerce.png',
+      },
  ];
   
