@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marcelomazzonetto.vercel.app/sitemap.xml
+
+# Disallow admin areas if any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all crawlers access to CSS and JS files
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp

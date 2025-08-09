@@ -10,12 +10,12 @@ const Footer = () => {
             <div className='flex flex-col md:flex-row justify-between items-center'>
                 <div className='mb-4 md:mb-0'>
                     <Link className='text-xl font-bold text-primary' href="/">
-                       <Image
-                                  src={"/Logo.png"}
-                                  alt='logo'
-                                  width={50}
-                                  height={50}
-                                  />
+                      <Image
+  src={"/LogoMM.png"}
+  alt='logo'
+  width={50}
+  height={50}
+/>
                     </Link>
                     <p className='text-muted-foreground text-sm'> © {new Date().getFullYear()} Marcelo Mazzonetto Portfolio. All rights reserved.  </p>
                 </div>
