@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className='flex items-center justify-between h-16'>
             <Link href="/" className='text-primary font-bold text-xl'>
             <Image
-            src={"/Logo.png"}
+            src={"/LogoMM.png"}
             alt='logo'
             width={50}
             height={50}

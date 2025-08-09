@@ -1,0 +1,29 @@
+{
+  "name": "Marcelo Mazzonetto - Desenvolvedor Full Stack",
+  "short_name": "Marcelo Portfolio",
+  "description": "Portfólio de Marcelo Mazzonetto - Desenvolvedor Full Stack",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/LogoMM.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/LogoMM.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "developer", "web-development"],
+  "lang": "pt-BR"
+}
