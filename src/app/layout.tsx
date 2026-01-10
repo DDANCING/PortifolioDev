@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import Footer from "./components/Footer";
 import { Toaster } from "sonner";
 import { personalSchema, websiteSchema, organizationSchema } from "@/lib/schemas";
+import Navbar from "./components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -120,13 +121,14 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-        <Navbar/>
-         <main className="min-h-screen pt-24">
-            {children}
-           
-          </main>
-           <Toaster />
-        <Footer/>
+          <LanguageProvider>
+            <Navbar/>
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Toaster />
+            <Footer/>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

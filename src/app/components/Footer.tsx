@@ -1,9 +1,14 @@
+"use client";
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className='bg-muted border-t '>
         <div className='container max-w-7xl mx-auto px-4 py-8'>
@@ -17,7 +22,9 @@ const Footer = () => {
   height={50}
 />
                     </Link>
-                    <p className='text-muted-foreground text-sm'> © {new Date().getFullYear()} Marcelo Mazzonetto Portfolio. All rights reserved.  </p>
+                    <p className='text-muted-foreground text-sm'> 
+                      © {new Date().getFullYear()} Marcelo Mazzonetto Portfolio. {t('footer.copyright')}
+                    </p>
                 </div>
                   <div className='flex space-x-4'>
                               <a
@@ -47,7 +54,6 @@ const Footer = () => {
                                 <FaInstagram />
                               </a>
                 
-                              
                               <a
                                href="https://wa.me/5545998405219"
                                target="_blank"

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Projects from "../components/Projects";
+import ProjectsNew from '../components/ProjectsNew';
 
 export const metadata: Metadata = {
   title: 'Projetos',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const ProjectsPage = () => {
     return (
         <div>
-        <Projects/>
+        <ProjectsNew/>
         </div>
     )
 }

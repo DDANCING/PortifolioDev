@@ -7,6 +7,7 @@ import { FaMapLocation } from "react-icons/fa6";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/utils/animations";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface FormData {
   name: string;
@@ -17,6 +18,8 @@ interface FormData {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const ContactClient = () => {
+  const { t } = useTranslation();
+  
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -55,11 +58,11 @@ const ContactClient = () => {
 
   React.useEffect(() => {
     if (status === "success") {
-      toast.success("Email enviado!");
+      toast.success(t('contact.emailSent'));
     } else if (status === "error") {
-      toast.error("Falha ao enviar o email!");
+      toast.error(t('contact.emailError'));
     }
-  }, [status]);
+  }, [status, t]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -82,7 +85,7 @@ const ContactClient = () => {
         className="text-4xl font-bold mb-8 text-center"
         variants={fadeInUp}
       >
-        Contact Me
+        {t('contact.pageTitle')}
       </motion.h1>
 
       <motion.div
@@ -92,10 +95,9 @@ const ContactClient = () => {
         {/* Contact Information */}
         <motion.div className="space-y-8" variants={fadeInUp}>
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('contact.getInTouchTitle')}</h2>
             <p className="text-muted-foreground">
-              I&apos;m always open to discussing new opportunities, interesting
-              projects, or just having a chat about technology.
+              {t('contact.getInTouchDescription')}
             </p>
           </div>
 
@@ -105,7 +107,7 @@ const ContactClient = () => {
                 <FaEnvelope className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-medium">Email</h3>
+                <h3 className="font-medium">{t('contact.emailLabel')}</h3>
                 <Link
                   href="mailto:marcmaker@outlook.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -120,7 +122,7 @@ const ContactClient = () => {
                 <FaPhone className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-medium">Phone</h3>
+                <h3 className="font-medium">{t('contact.phoneLabel')}</h3>
                 <Link
                   href="tel:+5545998405219"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -135,7 +137,7 @@ const ContactClient = () => {
                 <FaMapLocation className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-medium">Location</h3>
+                <h3 className="font-medium">{t('contact.locationLabel')}</h3>
                 <p className="text-muted-foreground">Cascavel, PR - Brazil</p>
               </div>
             </div>
@@ -150,7 +152,7 @@ const ContactClient = () => {
                 htmlFor="name"
                 className="block text-sm font-medium mb-2"
               >
-                Name
+                {t('contact.nameLabel')}
               </label>
               <input
                 type="text"
@@ -160,7 +162,7 @@ const ContactClient = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background"
-                placeholder="Your Name"
+                placeholder={t('contact.namePlaceholder')}
               />
             </div>
 
@@ -169,7 +171,7 @@ const ContactClient = () => {
                 htmlFor="email"
                 className="block text-sm font-medium mb-2"
               >
-                Email
+                {t('contact.emailLabel')}
               </label>
               <input
                 type="email"
@@ -179,7 +181,7 @@ const ContactClient = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background"
-                placeholder="your.email@example.com"
+                placeholder={t('contact.emailPlaceholder')}
               />
             </div>
 
@@ -188,7 +190,7 @@ const ContactClient = () => {
                 htmlFor="message"
                 className="block text-sm font-medium mb-2"
               >
-                Message
+                {t('contact.message')}
               </label>
               <textarea
                 id="message"
@@ -198,7 +200,7 @@ const ContactClient = () => {
                 required
                 rows={6}
                 className="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background resize-none"
-                placeholder="Tell me about your project or just say hello!"
+                placeholder={t('contact.messagePlaceholder')}
               />
             </div>
 
@@ -207,7 +209,7 @@ const ContactClient = () => {
               disabled={status === "loading"}
               className="w-full bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status === "loading" ? "Sending..." : "Send Message"}
+              {status === "loading" ? t('contact.sending') : t('contact.sendMessage')}
             </button>
           </form>
         </motion.div>

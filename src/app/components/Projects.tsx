@@ -6,8 +6,46 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { getTranslation } from '@/lib/translations'
 
 const Projects = () => {
+  const { language } = useLanguage();
+
+  // Mapeamento de títulos para chaves de tradução
+  const getProjectTranslationKey = (title: string): string | null => {
+    const mapping: Record<string, string> = {
+      'ProjectA': 'projectA',
+      'Toctok': 'toctok',
+      'E-commerce': 'ecommerce',
+      'Cris Mazzonetto': 'crisMazzonetto',
+      'Comm': 'comm',
+      'Tcar Imports': 'tcarImports',
+    };
+    return mapping[title] || null;
+  };
+
+  const getTranslatedTitle = (project: typeof projects[0]): string => {
+    const key = getProjectTranslationKey(project.title);
+    if (key) {
+      const translated = getTranslation(language, `projects.${key}.title`);
+      if (translated !== `projects.${key}.title`) {
+        return translated;
+      }
+    }
+    return project.title;
+  };
+
+  const getTranslatedDescription = (project: typeof projects[0]): string => {
+    const key = getProjectTranslationKey(project.title);
+    if (key) {
+      const translated = getTranslation(language, `projects.${key}.description`);
+      if (translated !== `projects.${key}.description`) {
+        return translated;
+      }
+    }
+    return project.description;
+  };
   return (
     <section className="py-20">
   <div className="container max-w-7xl mx-auto px-4">
@@ -15,7 +53,7 @@ const Projects = () => {
       className="text-3xl font-bold mb-12 text-center"
       {...fadeInUp}
     >
-      Highlighted Projects
+      {getTranslation(language, 'projectsPage.title')}
     </motion.h2>
 
     <motion.div
@@ -46,7 +84,7 @@ const Projects = () => {
             whileHover={{ x: 5 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            {project.title}
+            {getTranslatedTitle(project)}
           </motion.h3>
 
           <motion.p
@@ -55,7 +93,7 @@ const Projects = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            {project.description}
+            {getTranslatedDescription(project)}
           </motion.p>
 
           <motion.div
@@ -82,17 +120,19 @@ const Projects = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <motion.a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-muted hover:text-primary transition-colors"
-              whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaGithub className="w-5 h-5" />
-              <span>Code</span>
-            </motion.a>
+            {project.githubLink && !project.hideCode && (
+              <motion.a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted hover:text-primary transition-colors"
+                whileHover={{ x: 5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaGithub className="w-5 h-5" />
+                <span>{getTranslation(language, 'projectsPage.code')}</span>
+              </motion.a>
+            )}
 
             <motion.a
               href={project.demoLink}
@@ -103,7 +143,7 @@ const Projects = () => {
               whileTap={{ scale: 0.95 }}
             >
               <FaExternalLinkAlt className="w-5 h-5" />
-              <span>Live Demo</span>
+              <span>{getTranslation(language, 'projectsPage.demo')}</span>
             </motion.a>
           </motion.div>
         </motion.article>
