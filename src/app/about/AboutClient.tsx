@@ -1,6 +1,7 @@
-'use client'
+"use client";
 
-import { FaCode, FaLaptop, FaTools } from "react-icons/fa";
+import React from "react";
+import { FaCode, FaLaptop, FaTools, FaBriefcase, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
   fadeIn,
@@ -8,187 +9,203 @@ import {
   fadeInDown,
   staggerContainer,
   cardHover,
-  cardHoverSmall
 } from "@/utils/animations";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/lib/translations";
+
 
 const AboutClient = () => {
+  const { language } = useLanguage();
+
+  // Dados das Skills organizados para facilitar o map
+  const skillCategories = [
+    {
+      icon: FaCode,
+      title: getTranslation(language, "aboutPage.frontend"),
+      skills: ["React / Next.js", "TypeScript", "Tailwind CSS", "HTML5 / CSS3", "Shadcn/ui", "Framer Motion"],
+    },
+    {
+      icon: FaLaptop,
+      title: getTranslation(language, "aboutPage.backend"),
+      skills: ["Node.js", "Express", "Prisma", "PostgreSQL", "Python", "API REST"],
+    },
+    {
+      icon: FaTools,
+      title: getTranslation(language, "aboutPage.tools"),
+      skills: ["Figma", "Git / GitHub", "Docker", "AWS", "Vercel", "AI Integration"],
+    },
+  ];
+
+  // Dados das Experiências (Timeline)
+  const experiences = [
+    {
+      id: 3,
+      role: "Sew Software", // Nome do Projeto/Empresa
+      title: getTranslation(language, "aboutPage.exp3Role"),
+      period: "2025 - Present",
+      company: "M/M, Cascavel-PR",
+      description: getTranslation(language, "aboutPage.exp3Desc"),
+      link: "https://sew-demo.vercel.app/",
+      linkText: getTranslation(language, "aboutPage.viewDemo"),
+    },
+    {
+      id: 2,
+      role: "M/M Development",
+      title: getTranslation(language, "aboutPage.exp2Role"),
+      period: "2025 - Present",
+      company: "M/M, Cascavel-PR",
+      description: getTranslation(language, "aboutPage.exp2Desc"),
+      link: "https://crismazzonetto.com.br",
+      linkText: getTranslation(language, "aboutPage.visit"),
+    },
+    {
+      id: 1,
+      role: "JucouraJeans",
+      title: getTranslation(language, "aboutPage.exp1Role"),
+      period: "2021 - 2023",
+      company: "Cascavel-PR",
+      description: getTranslation(language, "aboutPage.exp1Desc"),
+      link: null,
+    },
+  ];
+
   return (
-    <div className="container max-w-7xl mx-auto py-20">
-      <motion.h1
-        className="text-4xl font-bold mb-8 text-center"
-        {...fadeInDown}
-      >
-        About Me
-      </motion.h1>
-
-      <motion.section
-        className="mb-16"
-        {...fadeInUp}
-      >
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-center">
-          Full Stack Developer specializing in Node.js and React/React Native, with solid experience in developing web and mobile applications. I am passionate about technology and constantly seek to learn and apply the latest trends and best development practices. I&apos;m ready to collaborate on challenging projects and contribute to the team&apos;s success.
-        </p>
-      </motion.section>
-
-      <motion.section
-        className="mb-16"
-        {...fadeIn}
-        transition={{ delay: 0.2 }}
-      >
-        <motion.h2
-          className="text-4xl font-bold mb-8 text-center mt-20"
+    <div className="container max-w-5xl mx-auto py-24 px-4 sm:px-6">
+      
+      {/* --- Header Section --- */}
+      <div className="text-center mb-20 space-y-4">
+        <motion.h1
+          className="text-4xl md:text-5xl font-bold tracking-tight text-foreground"
+          {...fadeInDown}
+        >
+          {getTranslation(language, "aboutPage.title")}
+        </motion.h1>
+        <motion.div 
+            className="w-20 h-1.5 bg-primary mx-auto rounded-full"
+            {...fadeIn}
+            transition={{ delay: 0.2 }}
+        />
+        <motion.p
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed pt-4"
           {...fadeInUp}
         >
-          Skills
-        </motion.h2>
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.div
-            className="bg-muted p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaCode className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Frontend</h3>
-            <ul className="text-muted-foreground space-y-2">
-              <li>React / Next.js</li>
-              <li>TypeScript</li>
-              <li>Tailwind CSS</li>
-              <li>HTML5 / CSS3</li>
-              <li>Shadcn/ui</li>
-            </ul>
-          </motion.div>
+          {getTranslation(language, "aboutPage.description")}
+        </motion.p>
+      </div>
 
-          <motion.div
-            className="bg-muted p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaLaptop className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Backend</h3>
-            <ul className="text-muted-foreground space-y-2">
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>Prisma</li>
-              <li>PostgreSQL</li>
-              <li>Python</li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="bg-muted p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaTools className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Tools & Others</h3>
-            <ul className="text-muted-foreground space-y-2">
-              <li>Figma</li>
-              <li>IA</li>
-              <li>GIT / GitHub</li>
-              <li>Docker</li>
-              <li>AWS</li>
-            </ul>
-          </motion.div>
-        </motion.div>
-      </motion.section>
-
+      {/* --- Skills Section --- */}
       <motion.section
-        className="mb-16"
-        {...fadeIn}
-        transition={{ delay: 0.4 }}
+        className="mb-24"
+        variants={staggerContainer}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, margin: "-100px" }}
       >
         <motion.h2
-          className="text-4xl font-bold mb-8 text-center"
-          {...fadeInUp}
+          className="text-3xl font-bold mb-10 text-center flex items-center justify-center gap-3"
+          variants={fadeInUp}
         >
-          Experiences
+          <FaCode className="text-primary opacity-80" />
+          {getTranslation(language, "aboutPage.skillsTitle")}
         </motion.h2>
-        <motion.div
-          className="max-w-3xl mx-auto space-y-8"
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.div
-            className="bg-muted p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHoverSmall}
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              JucouraJeans, Cascavel-PR — Sales and Website Manager
-            </h3>
-            <p className="text-primary/80 mb-2">
-              JucouraJeans, Cascavel-PR · 2021 - 2023
-            </p>
-            <ul className="text-muted-foreground text-sm space-y-1">
-              <li>· Developed and managed the company&apos;s official website.</li>
-              <li>· Responsible for customer service and commercial support.</li>
-            </ul>
-          </motion.div>
-          <motion.div
-            className="bg-muted p-6 rounded-lg shadow-md "
-            variants={fadeInUp}
-            {...cardHoverSmall}
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              M/M, Cascavel-PR — Development Ecommerce and admin panel
-            </h3>
-            <p className="text-primary/80 mb-2">
-              M/M, Cascavel-PR · 2025 - Present
-            </p>
-            <ul className="text-muted-foreground text-sm space-y-1">
-              <li>· Developed complete e-commerce platform and admin dashboard</li>
-              <li>· Maintained and updated features regularly based on client needs</li>
-            </ul>
-            <a
-              href="https://crismazzonetto.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 bg-primary text-white text-sm font-medium rounded-md hover:bg-primary/90 transition"
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {skillCategories.map((category, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-card border border-border/50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+              variants={fadeInUp}
+              {...cardHover}
             >
-              Visit crismazzonetto.com.br
-            </a>
-          </motion.div>
-        </motion.div>
-        <motion.div
-          className="max-w-3xl mx-auto mt-8"
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                <category.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-foreground">{category.title}</h3>
+              <ul className="space-y-2.5">
+                {category.skills.map((skill, sIdx) => (
+                  <li key={sIdx} className="flex items-center text-muted-foreground text-sm font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mr-2.5"></span>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* --- Experience Section (Timeline Design) --- */}
+      <motion.section
+        className="relative"
+        variants={staggerContainer}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
+        <motion.h2
+          className="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+          variants={fadeInUp}
         >
-          <motion.div
-            className="bg-muted p-6 rounded-lg shadow-md "
-            variants={fadeInUp}
-            {...cardHoverSmall}
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              Sew Software
-            </h3>
-            <p className="text-primary/80 mb-2">
-              The complete system with intelligent dashboard, luxury online store, and integrated electronic invoicing.
-            </p>
-            <p className="text-primary/80 mb-2">
-              M/M, Cascavel-PR · 2025 - Present
-            </p>
-            <ul className="text-muted-foreground text-sm space-y-1">
-              <li>· Developed complete e-commerce platform and admin dashboard</li>
-              <li>· Maintained and updated features regularly based on client needs</li>
-            </ul>
-            <a
-              href="https://sew-demo.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 bg-primary text-white text-sm font-medium rounded-md hover:bg-primary/90 transition"
+          <FaBriefcase className="text-primary opacity-80" />
+          {getTranslation(language, "aboutPage.experienceTitle")}
+        </motion.h2>
+
+        {/* Timeline Line */}
+        <div className="absolute left-4 md:left-1/2 top-24 bottom-0 w-px bg-border md:-translate-x-1/2 hidden md:block" />
+
+        <div className="space-y-12 relative">
+          {experiences.map((exp, idx) => (
+            <motion.div
+              key={exp.id}
+              className={`relative flex flex-col md:flex-row gap-8 ${
+                idx % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
+              variants={fadeInUp}
             >
-              View demo
-            </a>
-          </motion.div>
-        </motion.div>
+              {/* Timeline Dot */}
+              <div className="absolute left-4 md:left-1/2 top-0 w-4 h-4 rounded-full bg-background border-[3px] border-primary translate-y-1.5 md:-translate-x-1/2 z-10 hidden md:block" />
+
+              {/* Content Card */}
+              <div className="flex-1 md:w-1/2">
+                 <div className={`flex flex-col ${idx % 2 === 0 ? "md:items-start" : "md:items-end"}`}>
+                    <div className="bg-card border border-border p-6 rounded-2xl shadow-sm hover:border-primary/50 transition-colors w-full relative">
+                         {/* Mobile Dot */}
+                        <div className="absolute left-0 top-0 -ml-[21px] mt-6 w-3 h-3 rounded-full bg-primary md:hidden"></div>
+                        <div className="absolute left-0 top-6 -ml-[16px] bottom-0 w-px bg-border md:hidden"></div>
+
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                             <h3 className="text-lg font-bold text-foreground">{exp.role}</h3>
+                             <span className="inline-block px-3 py-1 rounded-full bg-secondary text-xs font-semibold text-secondary-foreground whitespace-nowrap">
+                                {exp.period}
+                             </span>
+                        </div>
+                        
+                        <p className="text-primary font-medium text-sm mb-4">{exp.company} — {exp.title}</p>
+                        
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                            {exp.description}
+                        </p>
+
+                        {exp.link && (
+                            <a
+                                href={exp.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:underline underline-offset-4"
+                            >
+                                {exp.linkText}
+                                <FaExternalLinkAlt className="w-3 h-3" />
+                            </a>
+                        )}
+                    </div>
+                 </div>
+              </div>
+
+              {/* Empty space for the other side of timeline */}
+              <div className="flex-1 md:w-1/2" />
+            </motion.div>
+          ))}
+        </div>
       </motion.section>
     </div>
   );

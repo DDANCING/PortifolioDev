@@ -8,8 +8,11 @@ import Link from 'next/link'
 import React from 'react'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect'
+import { useTranslation } from '@/hooks/useTranslation'
 
 const Hero = () => {
+  const { t } = useTranslation()
+
   return (
     <section className='py-28 container max-w-7xl mx-auto flex'>
       <motion.div className='max-w-3xl mx-auto text-center flex flex-col items-center mb-4'>
@@ -24,20 +27,20 @@ const Hero = () => {
         </motion.div>
         <div>
           <motion.h1 {...fadeInUp} transition={{delay: 0.3}} className='text-2xl md:text-4xl font-bold mb-6'>
-            What’s up? I’m <motion.span {...fadeInUp} transition={{delay: 0.5}} className='text-primary'>Marcelo Mazzonetto</motion.span>
+            {t('hero.greeting')} <motion.span {...fadeInUp} transition={{delay: 0.5}} className='text-primary'>Marcelo Mazzonetto</motion.span>
           </motion.h1>
           <div className='text-xl md:text-2xl text-muted-foreground h-10'>
             <div className="notranslate" translate="no">
   <Typewriter
     options={{
       strings: [
-        'Software Engineer',
-        'Full Stack Developer',
-        'Next',
-        'React',
-        'React Native',
-        'Node.js',
-        'DevOps',
+        t('hero.softwareEngineer'),
+        t('hero.fullStackDeveloper'),
+        t('hero.next'),
+        t('hero.react'),
+        t('hero.reactNative'),
+        t('hero.nodejs'),
+        t('hero.devOps'),
       ],
       autoStart: true,
       loop: true,
@@ -92,7 +95,7 @@ const Hero = () => {
             >
             <Link href="/projects">
               <Button className='text-muted font-bold text-lg p-6 m-2 shadow-md'>
-                Projects
+                {t('hero.projects')}
               </Button>
             </Link>
             </motion.div>
@@ -102,7 +105,7 @@ const Hero = () => {
             >
             <Link href="/contact">
               <Button variant={'secondary'} className='text-foreground font-bold text-lg p-6 m-2 shadow-md'>
-                Contact
+                {t('hero.contact')}
               </Button>
             </Link>
             </motion.div>
