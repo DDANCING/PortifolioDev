@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Certifications from "./components/Certifications";
 import ProjectsNew from "./components/ProjectsNew";
 import ContactCTA from "./components/ContactCTA";
-import Hero from './components/HeroNew';
+import HeroNew from './components/HeroNew';
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
    <>
-   <Hero/>
+   <HeroNew/>
    <ProjectsNew/>
    <Certifications/>
    <ContactCTA/>
